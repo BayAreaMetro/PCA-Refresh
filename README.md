@@ -10,10 +10,18 @@ As described above the project had three phases, (i) identify strengths and weak
 - Some of the datasets will be available for external audiences on MTC's _____data/mapping___ portal.
 - Some of the datasets are only available for internal MTC staff. Contact Michael Germeraad mgermeraad@bayareametro.gov if you are interested in gaining access to these files.
 - The Refresh Final Report and Onling Mapping Viewer are available on both the MTC PCA webpage and ABAG PCA webpage.
-## Methodology
+## Methodology - PCA Eligibility Maps
 At the core of the project was the development of 5 PCA eligibility maps. One map for each PCA type: Natural Lands, Working Lands, Urban Greening, Regional Recreation, and Climate Adaptation. To create these key final products many other interim, objective-level datasets were created, which were built on over 30+ raw datasets that had been individually processed. Figure 1 provides a summary of process of going from raw dataset to PCA Eligibility Map.
 
-Figure 1 outlines the overall process to develop Objective Maps (15) and Eligibility Maps (5).
+Figure 1 outlines the overall process to develop Objective Maps (15) and Eligibility Maps (5). Figure 2 outlines in a bit more detail how steps 1 and 2 occur to produce a generic Objective Map and generic PCA Elgibility Map.
+
+FIGURE1
+![PCA_Data_Process_Figure1](https://github.com/BayAreaMetro/PCA-Refresh/assets/89942661/f6b09995-073f-4306-8e6c-2aba6d8ad4e5)
+
+FIGURE 2
+![PCA_Data_Process_Figure2](https://github.com/BayAreaMetro/PCA-Refresh/assets/89942661/698b69bb-04e8-4474-b930-f124913d6b3d)
+
+
 
 The process began by working with stakeholders and the project Technical Advisory Committee to craft objective statements for each PCA type. See the below bulleted list with 2-4 objective statements for each PCA type. This was the starting point to then integrate data into the PCA Refresh. For each objective statement at least one dataset with coverage across the nine county region was collected and integrated into the Framework. Most objectives are associated with a single dataset, while others bring multiple datasets together (e.g. NL2 brings six datasets together, the most of any objective). 
 
@@ -38,7 +46,41 @@ The process began by working with stakeholders and the project Technical Advisor
 - CA2: Manage very high fire risk on natural and working lands to reduce the intensity and spread potential for future wildfires.
 - CA3: Enhance areas that provide cooling experiences in areas experiencing extreme heat.
 
-###STEP 1
+### STEP 1
+
+The project team worked to identify, collect, and match available datasets to each objective. The ***Reference Data Table*** below provides a summary of all the data included, as well as which objective it was paired with. To be considered, the dataset had to span all nine counties and when multiple datasets of similar types were available, government or science-based organizations were selected. After matching data to each objective they were individually processed.
+This process was repeated for all 28 original datasets
+
+### STEP 2:
+
+Some data had no processing. The original dataset was already clipped to the nine county Bay Area, and the attribute values could be used directly. In other cases the extent of the dataset was clipped to the nine county region, and additional attribute specific processing was completed. For example, for the tree canopy data layer that informs UG# the dataset had an attribute that measured tree canopy as a percentage of land cover. The project team selected a single cut off point of significance to identify areas where additional tree cover would be beneficial. For each dataset, the processing resulted in a binary data layer, with locations either in or out, with the project team making a determination of which attributes or combination of attributes in a data layer were to be included. This information is also captured in the ***Reference Data Table***, under column ***XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX***.
+This process was repeated for all 28 original datasets.
+
+### STEP 3:
+
+After processing data individually the datasets were used to create objective specific maps. In cases where a single data layer was used for the objective, it was simply brought over. In cases where two or more datasets were used to identify an objective they were combined, with the union of their combination taken – an area of land only needed to meet one condition to be included. 
+This process integrated the 28 processed datasets into 15 objective maps.
+
+### STEP 4:
+
+The final stage is nearly identical to Stage 3. The objective specific maps are combined together in the same process – again, areas only needed to meet one objective to be included in the eligibility map.
+This process integrated the 15 objective maps into 5 PCA Eligibility Maps, the final product of the methodology.
+
+### Nuances in Stage 3 and Stage 4:
+
+In addition to data determining where PCAs were appropriate, other land cover and jurisdiction boundaries were used to clip eligibility. 
+In the case of Natural Land and Working Land PCA types, their boundaries were clipped to outside City Limits/Urban Growth Boundaries/Urban Service Limit Lines as defined by this data layer **XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX**. Similarly, the inverse was used to keep only areas inside cities eligible for Urban Greening. Additional nuance was added to the Natural Land layer, allowing for some natural land eligibility identified within Cities along the shoreline. Areas identified by data included in Objective NL2 that did not overlap with existing urban areas, nor MTC/ABAG growth geographies were included. The ***Reference Data Table*** has more detail on how this “masking” was done.
+The above methodology outlines how the five PCA Type Eligibility Maps were produced as well as the building block elements that form their basis. Those same datasets used to create the Eligibility Maps were also used as the basis for developing Draft Regionally-Identified PCAs
+
+## Methodology - Draft Regionally-Identified PCA Maps
+
+Regionally-Identified PCA Maps will be used as a complement to local nominations. They aim to identify areas that may not be identified by local governments, but have regionally significant, or more importantly, regionally-connective values. To generate these maps, the same datasets used to create the Eligibility Maps were used. Below is the detail of which components were leveraged.
+- Draft Regionally-Identified Natural Lands. Identifies areas that are [(a) habitat corridors OR (b) priority streams] AND (c) prime habitat.
+- Draft Regionally-Identified Working Lands. Identifies (a) prime agricultural lands within 2 miles of the urban edge. A buffer was used to generate this map.
+- Draft Regionally-Identified Urban Greening. Identifies (a) urban greening eligible areas AND (b) equity priority communities.
+- Draft Regionally-Identified Recreation. Is simply objective R1 – Regional Trails objective map.
+- Draft Regionally-Identified Climate Adaptation – is [(a) 4.9’ feet of sea level rise, or (b) FEMA 100 year flood] AND NL2.
+These maps are anticipated to remain in draft form until Fall 2024 when the ABAG Executive Board will be asked to formally adopt them ahead of a future PCA nomination cycle.
 
 
 ## Data Resources Documentation
