@@ -1,5 +1,45 @@
 # PCA-Refresh
 Priority Conservation Areas (PCAs) Refresh  
+## Problem Statement
+The PCA program has existed without significant updates since 2007. The existing framework has been flexible, allowing local PCA nominations to occur anywhere in the region and claim any PCA type designation. The PCA Refresh was a 2 year effort (2022-2024) to consider possible reforms to the program. The Refresh began by identifying the strengths and weaknesses of the existing PCA Framework, identified a vision, objectives, and goals for a future PCA 2.0 Framework, and then developed responsive reforms.
+## Project Scope
+As described above the project had three phases, (i) identify strengths and weaknesses of the existing PCA Framework, (ii) identify a vision, objective, and goals for the PCA 2.0 Framework, and (iii) develop responsive reforms. The integration of scientific data was part of each phase, helping vet existing PCAs and consider how data could help inform new ones. In particular the PCA 2.0 Objectives were the basis for identifying over 30 datasets to bring into a data framework. Those datasets were then processed individually and processed together to develop new mapping data to generate PCA 2.0 specific datasets and mapping products. In particular, (a) objective-level datasets, (b) PCA type eligibility maps, and (c) draft regionally-identified PCAs were created.
+## Project Resources
+- Full written project details are provided in the project Box Folder.
+- A single ArcGIS Project has all the associated data organized in a single folder. This project is over 8GBs.
+- Some of the datasets will be available for external audiences on MTC's _____data/mapping___ portal.
+- Some of the datasets are only available for internal MTC staff. Contact Michael Germeraad mgermeraad@bayareametro.gov if you are interested in gaining access to these files.
+- The Refresh Final Report and Onling Mapping Viewer are available on both the MTC PCA webpage and ABAG PCA webpage.
+## Methodology
+At the core of the project was the development of 5 PCA eligibility maps. One map for each PCA type: Natural Lands, Working Lands, Urban Greening, Regional Recreation, and Climate Adaptation. To create these key final products many other interim, objective-level datasets were created, which were built on over 30+ raw datasets that had been individually processed. Figure 1 provides a summary of process of going from raw dataset to PCA Eligibility Map.
+
+Figure 1 outlines the overall process to develop Objective Maps (15) and Eligibility Maps (5).
+
+The process began by working with stakeholders and the project Technical Advisory Committee to craft objective statements for each PCA type. See the below bulleted list with 2-4 objective statements for each PCA type. This was the starting point to then integrate data into the PCA Refresh. For each objective statement at least one dataset with coverage across the nine county region was collected and integrated into the Framework. Most objectives are associated with a single dataset, while others bring multiple datasets together (e.g. NL2 brings six datasets together, the most of any objective). 
+
+**Natural Lands (NL)**
+- NL1: Protect a full representation of the Bay Area’s habitats in robust amounts to ensure long-term resilience of the region’s biodiversity. 
+- NL2: Enhance watersheds including priority stream corridors, wetlands, and groundwater recharge areas.
+- NL3: Maintain and enhance wildlife corridors and habitat connectivity. 
+**Working Lands (WL)**
+- WL1: Protect important farmland, grazing land, and timber land to support the Bay Area agricultural economy and access to locally- and community-grown food.
+- WL2: Maintain areas of high carbon stock and enhance low-carbon stock areas with multi-benefit management.
+**Urban Greening (UG)**
+- UG1: Expand tree cover in urban areas with limited shade, particularly in equity priority communities.  
+- UG2: Expand green infrastructure particularly in areas with low surface permeability or other stormwater management issues.   
+- UG3: Enhance urban creeks to provide improved ecological, recreational, and resilience functions.
+- UG4-EQ: Prioritize urban greening areas within 1/2-mile radius of EPC and areas with high pollution burden.
+**Recreation (R)**
+- R1: Complete and enhance access to the Regional Trails Network.
+- R2: Create new and enhance existing local parks, particularly in Equity Priority Communities and areas with limited access to outdoor recreation.
+- R3-EQ: Prioritize regional recreation areas within 1/2-mile radius of EPC.
+**Climate Adaptation (CA)**
+- CA1: Prepare areas that provide habitat migration opportunities, particularly for marsh and other shoreline systems when sea levels rise, and extreme precipitation events become more frequent.
+- CA2: Manage very high fire risk on natural and working lands to reduce the intensity and spread potential for future wildfires.
+- CA3: Enhance areas that provide cooling experiences in areas experiencing extreme heat.
+
+###STEP 1
+
 
 ## Data Resources Documentation
 | PCA_Type | Objective | PCA_Type_Description_Text_Long| Indicator_Dataset| Indicator_Threshold_Notes | Indicator Layer Name | Indicator Source Dataset Name | MG detailed planning analysis needs? | AGOL? (MTC or other) | Available for Download? (Yes, where; No, where) | If yes, Source/Download link | MTC to Upload (Yes or No) |
