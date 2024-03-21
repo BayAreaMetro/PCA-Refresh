@@ -3,83 +3,107 @@ Priority Conservation Areas (PCAs) Refresh
 ## Problem Statement
 The PCA program has existed without significant updates since 2007. The existing framework has been flexible, allowing local PCA nominations to occur anywhere in the region and claim any PCA type designation. The PCA Refresh was a 2 year effort (2022-2024) to consider possible reforms to the program. The Refresh began by identifying the strengths and weaknesses of the existing PCA Framework, identified a vision, objectives, and goals for a future PCA 2.0 Framework, and then developed responsive reforms.
 ## Project Scope
-As described above the project had three phases, (i) identify strengths and weaknesses of the existing PCA Framework, (ii) identify a vision, objective, and goals for the PCA 2.0 Framework, and (iii) develop responsive reforms. The integration of scientific data was part of each phase, helping vet existing PCAs and consider how data could help inform new ones. In particular the PCA 2.0 Objectives were the basis for identifying over 30 datasets to bring into a data framework. Those datasets were then processed individually and processed together to develop new mapping data to generate PCA 2.0 specific datasets and mapping products. In particular, (a) objective-level datasets, (b) PCA type eligibility maps, and (c) draft regionally-identified PCAs were created.
+As described above the project had three phases, (i) identify strengths and weaknesses of the existing PCA Framework, (ii) identify a vision, objective, and goals for the PCA 2.0 Framework, and (iii) develop responsive reforms. The integration of scientific data was part of each phase, helping vet existing PCAs and consider how data could help inform new ones. In particular the PCA 2.0 Objectives were the basis for identifying over 30 datasets to bring into a data framework. Those datasets were then processed individually and processed together to develop new mapping data to generate PCA 2.0 specific datasets and mapping products. The PCA Refresh resulted in two novel data outputs:
+- **PCA Type Eligibility Maps**
+- **Draft Regionally-Identified PCA Maps**
+
+The methodology documentation below describes the process for developing each -- with the Regionally-Identified PCA Maps leveraging the structure used for the Eligibilty Maps
+
 ## Project Resources
-- Full written project details are provided in the project Box Folder.
-- A single ArcGIS Project has all the associated data organized in a single folder. This project is over 8GBs.
-- Some of the datasets will be available for external audiences on MTC's _____data/mapping___ portal.
-- Some of the datasets are only available for internal MTC staff. Contact Michael Germeraad mgermeraad@bayareametro.gov if you are interested in gaining access to these files.
-- The Refresh Final Report and Onling Mapping Viewer are available on both the MTC PCA webpage and ABAG PCA webpage.
+- Full written project details are provided in the [PCA Refresh project Box Folder](https://mtcdrive.box.com/s/uq2w1im8sdo5j2vjp3aj5hln84o5p28l).
+- The PCA Refresh geographic data is available in a few locations: 
+  - Externally available datasets are available on MTC's Open Data Portal **ADD LINK WHEN AVAILABLE**
+  - Internally available datasets are available on MTC's ArcGIS Online Organizational Site **ADD LINK WHEN AVAILABLE**. For external parties, contact Michael Germeraad mgermeraad@bayareametro.gov if you are interested in gaining access to these files.
+  - The datasets are also saved as a singular project file and are available **WHERE IS THE ArcGIS PROJECT FILE SAVED | ADD LINK WHEN AVAILABLE**
+- The Refresh Final Report and Onling Mapping Viewer are available on both the [MTC PCA webpage](https://mtc.ca.gov/planning/land-use/priority-conservation-areas-pcas) and [ABAG PCA webpage](https://abag.ca.gov/our-work/land-use/pca-priority-conservation-areas).
 ## Methodology - PCA Eligibility Maps
-At the core of the project was the development of 5 PCA eligibility maps. One map for each PCA type: Natural Lands, Working Lands, Urban Greening, Regional Recreation, and Climate Adaptation. To create these key final products many other interim, objective-level datasets were created, which were built on over 30+ raw datasets that had been individually processed. Figure 1 provides a summary of process of going from raw dataset to PCA Eligibility Map.
+At the core of the project was the development of 5 PCA eligibility maps. One map for each PCA type: Natural Lands, Working Lands, Urban Greening, Regional Recreation, and Climate Adaptation. To create these key final products many other interim, objective-level datasets were created, which were built on over 30+ raw datasets that had been individually processed. 
 
-Figure 1 outlines the overall process to develop Objective Maps (15) and Eligibility Maps (5). Figure 2 outlines in a bit more detail how steps 1 and 2 occur to produce a generic Objective Map and generic PCA Elgibility Map.
-
-FIGURE1
-![PCA_Data_Process_Figure1](https://github.com/BayAreaMetro/PCA-Refresh/assets/89942661/f6b09995-073f-4306-8e6c-2aba6d8ad4e5)
-
-FIGURE 2
-![PCA_Data_Process_Figure2](https://github.com/BayAreaMetro/PCA-Refresh/assets/89942661/698b69bb-04e8-4474-b930-f124913d6b3d)
-
-
-
-The process began by working with stakeholders and the project Technical Advisory Committee to craft objective statements for each PCA type. See the below bulleted list with 2-4 objective statements for each PCA type. This was the starting point to then integrate data into the PCA Refresh. For each objective statement at least one dataset with coverage across the nine county region was collected and integrated into the Framework. Most objectives are associated with a single dataset, while others bring multiple datasets together (e.g. NL2 brings six datasets together, the most of any objective). 
+The data methodology was built off of written _objective statements_ for each PCA type that were vetted by stakeholders and the project Technical Advisory Committee to craft objective statements for each PCA type. The _objective statements_ set the specific goals for each PCA typel. See the bulleted list below for the 2-4 objective statements for each PCA type. These statements were the starting point to then bring data into the PCA Refresh. For each objective statement at least one dataset with coverage across the nine county region was collected and integrated into the Framework. Most objectives are associated with a single dataset, while others bring multiple datasets together (e.g. NL2 brings six datasets together, the most of any objective). 
 
 **Natural Lands (NL)**
 - NL1: Protect a full representation of the Bay Area’s habitats in robust amounts to ensure long-term resilience of the region’s biodiversity. 
 - NL2: Enhance watersheds including priority stream corridors, wetlands, and groundwater recharge areas.
-- NL3: Maintain and enhance wildlife corridors and habitat connectivity. 
+- NL3: Maintain and enhance wildlife corridors and habitat connectivity.
+
 **Working Lands (WL)**
 - WL1: Protect important farmland, grazing land, and timber land to support the Bay Area agricultural economy and access to locally- and community-grown food.
 - WL2: Maintain areas of high carbon stock and enhance low-carbon stock areas with multi-benefit management.
+
 **Urban Greening (UG)**
 - UG1: Expand tree cover in urban areas with limited shade, particularly in equity priority communities.  
 - UG2: Expand green infrastructure particularly in areas with low surface permeability or other stormwater management issues.   
 - UG3: Enhance urban creeks to provide improved ecological, recreational, and resilience functions.
 - UG4-EQ: Prioritize urban greening areas within 1/2-mile radius of EPC and areas with high pollution burden.
+
 **Recreation (R)**
 - R1: Complete and enhance access to the Regional Trails Network.
 - R2: Create new and enhance existing local parks, particularly in Equity Priority Communities and areas with limited access to outdoor recreation.
 - R3-EQ: Prioritize regional recreation areas within 1/2-mile radius of EPC.
+
 **Climate Adaptation (CA)**
 - CA1: Prepare areas that provide habitat migration opportunities, particularly for marsh and other shoreline systems when sea levels rise, and extreme precipitation events become more frequent.
 - CA2: Manage very high fire risk on natural and working lands to reduce the intensity and spread potential for future wildfires.
 - CA3: Enhance areas that provide cooling experiences in areas experiencing extreme heat.
 
+The process to go from the above 15 objective statements to PCA Eligibility Maps is illustrated in the three figures below. The steps illustrated in the figures are then described in greater detail.
+
+- Figure 1 outlines the overall process to develop Objective Maps (15) and Eligibility Maps (5).
+- Figure 2 outlines in greater detail how steps 1 and 2 occur to produce a generic Objective Map and generic PCA Elgibility Map.
+- Figure 3 provides additional detail on how the geographic extent of the eligibility maps are influenced by city limits and urban growth boundaries.
+
+![PCA_Data_Process_Figure1](https://github.com/BayAreaMetro/PCA-Refresh/assets/89942661/f6b09995-073f-4306-8e6c-2aba6d8ad4e5)
+
+![PCA_Data_Process_Figure2](https://github.com/BayAreaMetro/PCA-Refresh/assets/89942661/698b69bb-04e8-4474-b930-f124913d6b3d)
+
+**FIGURE 3 - Geographic Extent of PCAs informed by City Limits/UGBs (the pink elements described in Figures 1 and 2.**
+<img width="907" alt="PCA_Data_Process_Figure3b" src="https://github.com/BayAreaMetro/PCA-Refresh/assets/89942661/61953503-f909-43f7-9258-c9dc07491776">
+
+_*Eligible Natural Lands are inclusive of tidal areas (e.g. tidal wetlands, polder management, and non-urbanized upland migration areas.)_
+
+_**Where Urban Growth Boundaries exist, they are used; elsewhere, City limits are used. In some rare cases, Urban Service Limits are used._
+
 ### STEP 1
 
-The project team worked to identify, collect, and match available datasets to each objective. The ***Reference Data Table*** below provides a summary of all the data included, as well as which objective it was paired with. To be considered, the dataset had to span all nine counties and when multiple datasets of similar types were available, government or science-based organizations were selected. After matching data to each objective they were individually processed.
-This process was repeated for all 28 original datasets
+Starting with the objective statements, the project team worked to identify, collect, and match available datasets to each objective. The ***Reference Data Table*** below provides a summary of all the data included, as well as which objective it was paired with. To be considered, the dataset had to span all nine counties and when multiple datasets of similar types were available, government or science-based organizations were selected. After matching data to each objective they were individually processed.
+
+_This process was repeated for all 28 original datasets._
 
 ### STEP 2:
 
-Some data had no processing. The original dataset was already clipped to the nine county Bay Area, and the attribute values could be used directly. In other cases the extent of the dataset was clipped to the nine county region, and additional attribute specific processing was completed. For example, for the tree canopy data layer that informs UG# the dataset had an attribute that measured tree canopy as a percentage of land cover. The project team selected a single cut off point of significance to identify areas where additional tree cover would be beneficial. For each dataset, the processing resulted in a binary data layer, with locations either in or out, with the project team making a determination of which attributes or combination of attributes in a data layer were to be included. This information is also captured in the ***Reference Data Table***, under column ***XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX***.
-This process was repeated for all 28 original datasets.
+Some data had no processing. The original dataset was already clipped to the nine county Bay Area, and the attribute values could be used directly. In other cases the extent of the dataset was clipped to the nine county region, and additional attribute specific processing was completed. For example, for the tree canopy data layer that informs Urban Greening Objective 1 (UG1) the dataset had an attribute that measured tree canopy as a percentage of land cover. The project team selected a single cut off point of significance to identify areas where additional tree cover would be beneficial. For each dataset, the processing resulted in a binary data layer, with locations either in or out, with the project team making a determination on which attributes or combination of attributes in a data layer were to be included. This information is also captured in the ***Reference Data Table***, under column ***Indicator Threshold Notes***.
+
+_This process was repeated for all 28 original datasets._
 
 ### STEP 3:
 
-After processing data individually the datasets were used to create objective specific maps. In cases where a single data layer was used for the objective, it was simply brought over. In cases where two or more datasets were used to identify an objective they were combined, with the union of their combination taken – an area of land only needed to meet one condition to be included. 
-This process integrated the 28 processed datasets into 15 objective maps.
+After processing data individually the datasets were used to create objective specific maps. In cases where a single data layer was used for the objective, there was no new geoprocessing or filtering actions. In cases where two or more datasets were used to identify an objective they were combined, with the union of their combination taken – an area of land only needed to meet one condition to be included. 
+
+_This process integrated the 28 processed datasets into 15 objective maps._
 
 ### STEP 4:
 
 The final stage is nearly identical to Stage 3. The objective specific maps are combined together in the same process – again, areas only needed to meet one objective to be included in the eligibility map.
-This process integrated the 15 objective maps into 5 PCA Eligibility Maps, the final product of the methodology.
+
+_This process integrated the 15 objective maps into 5 PCA Eligibility Maps, the final product of the methodology._
 
 ### Nuances in Stage 3 and Stage 4:
 
-In addition to data determining where PCAs were appropriate, other land cover and jurisdiction boundaries were used to clip eligibility. 
-In the case of Natural Land and Working Land PCA types, their boundaries were clipped to outside City Limits/Urban Growth Boundaries/Urban Service Limit Lines as defined by this data layer **XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX**. Similarly, the inverse was used to keep only areas inside cities eligible for Urban Greening. Additional nuance was added to the Natural Land layer, allowing for some natural land eligibility identified within Cities along the shoreline. Areas identified by data included in Objective NL2 that did not overlap with existing urban areas, nor MTC/ABAG growth geographies were included. The ***Reference Data Table*** has more detail on how this “masking” was done.
-The above methodology outlines how the five PCA Type Eligibility Maps were produced as well as the building block elements that form their basis. Those same datasets used to create the Eligibility Maps were also used as the basis for developing Draft Regionally-Identified PCAs
+In addition to using data to set eligibility for where PCAs were appropriate, other land cover and jurisdiction boundaries were used to clip eligibility.
+
+In the case of Natural Land and Working Land PCA types, their boundaries were clipped to outside City Limits/Urban Growth Boundaries/Urban Service Limit Lines as defined by this data layer **LINK TO OTHER GITHUB OR ARCGIS FILE**. Similarly, the inverse was used to keep only areas inside cities eligible for Urban Greening. Refer to Figure 3 for this nuance. In addition to using City Limits/Urban Growth Boundaries/Urban Service Limit Lines the Natural Land PCA type had additional nuance added. This was done recognizing that most shoreline jurisdictions have their city boundaries extend to the shoreline edge, or into the Bay water feature. The PCA Refresh Project Team developed a nuanced approach for Natural Land PCA Eligibility that allowed for areas to be identified inside city limits along the shoreline. Areas identified by data included in Objective NL2 that did not overlap with existing urban areas, nor MTC/ABAG growth geographies were included. The ***Reference Data Table*** has more detail on how this “masking” was done -- see the "Urban Non-Tidal Mask".
 
 ## Methodology - Draft Regionally-Identified PCA Maps
 
+The above methodology outlines how the five PCA Type Eligibility Maps were produced as well as the building block elements that form their basis. Those same datasets used to create the Eligibility Maps were also used as the basis for developing Draft Regionally-Identified PCAs, another data product of the PCA Refresh.
+
 Regionally-Identified PCA Maps will be used as a complement to local nominations. They aim to identify areas that may not be identified by local governments, but have regionally significant, or more importantly, regionally-connective values. To generate these maps, the same datasets used to create the Eligibility Maps were used. Below is the detail of which components were leveraged.
-- Draft Regionally-Identified Natural Lands. Identifies areas that are [(a) habitat corridors OR (b) priority streams] AND (c) prime habitat.
-- Draft Regionally-Identified Working Lands. Identifies (a) prime agricultural lands within 2 miles of the urban edge. A buffer was used to generate this map.
-- Draft Regionally-Identified Urban Greening. Identifies (a) urban greening eligible areas AND (b) equity priority communities.
-- Draft Regionally-Identified Recreation. Is simply objective R1 – Regional Trails objective map.
-- Draft Regionally-Identified Climate Adaptation – is [(a) 4.9’ feet of sea level rise, or (b) FEMA 100 year flood] AND NL2.
+- **Draft Regionally-Identified Natural Lands** is the intersection of components of _Natural Lands Objective 1_ and _Natural Lands Objective 2_ and _Natural Land Objective 3_ datasets. It is the intersection of { (a) critical linkages OR (b) stream conservation targets } AND { (c) essential lands }. It identifies wildlife corridors and priority streams in the region that coincide with highly rated habitats.
+- **Draft Regionally-Identified Working Lands** identify a subset of (a) farmland within 2 miles of the urban edge. A buffer was used to generate this map, using the City Limit/Urban Growth Boundary/Urban Service Limit Line used elsewhere in the Framework. Farmland of "Prime, State, Local, and Unique" significance were used.
+- **Draft Regionally-Identified Urban Greening** identify any { (a) urban greening eligible areas } AND { (b) equity priority communities }. This approach lifts up any urban greening opportunity within EPCs.
+- **Draft Regionally-Identified Recreation** is the _Recreation Objective 1_ map with no additional processing.
+- **Draft Regionally-Identified Climate Adaptation** is the intersection of _Climate Adaptation Objective 1_ and elements of _Natural Land Objective 2_. This is the intersection of areas that are within { (a) 4.9’ feet of sea level rise, or (b) FEMA 100 year flood } and {(c) marsh suitability, (d) polder management, (e) tidal marsh, (f) stream conservation targets}.
+
 These maps are anticipated to remain in draft form until Fall 2024 when the ABAG Executive Board will be asked to formally adopt them ahead of a future PCA nomination cycle.
 
 
