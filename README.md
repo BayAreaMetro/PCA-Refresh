@@ -43,7 +43,7 @@ The data methodology was built off of written _objective statements_ for each PC
 
 **Climate Adaptation (CA)**
 - CA1: Prepare areas that provide habitat migration opportunities, particularly for marsh and other shoreline systems when sea levels rise, and extreme precipitation events become more frequent.
-- CA2: Manage very high fire risk on natural and working lands to reduce the intensity and spread potential for future wildfires.
+- CA2: Manage very high fire risk to reduce the intensity and spread potential for future wildfires.
 - CA3: Enhance areas that provide cooling experiences in areas experiencing extreme heat.
 
 The process to go from the above 15 objective statements to PCA Eligibility Maps is illustrated in the three figures below. The steps illustrated in the figures are then described in greater detail.
