@@ -12,6 +12,7 @@ The methodology documentation below describes the process for developing each --
 ## Project Resources
 - Full written project details are provided in the [PCA Refresh project Box Folder](https://mtcdrive.box.com/s/uq2w1im8sdo5j2vjp3aj5hln84o5p28l). Available to internal users.
   - For external users, a Summary documentation of the PCA types is described on this GitHub page, but is most suscinctly summarized in this **[2-page document](https://mtcdrive.box.com/s/cyah1cn6l88ua1f6sytyi8gukhhedt40)** which includes PCA type information on the description, objectives, datasets, primary benefits and co-benefits.
+  - For external users particularly interested in the datasets this **[excel file](https://mtcdrive.box.com/s/ev7t7g4owots5hanoqc8u0lm0d460z4z)** provides additional detail on source data used to create the eligibility maps.
 - The PCA Refresh geographic data is available in a few locations: 
   - Externally available datasets are available on MTC's Open Data Portal **ADD LINK WHEN AVAILABLE**
   - Internally available datasets are available on MTC's ArcGIS Online Organizational Site **ADD LINK WHEN AVAILABLE**. For external parties, contact Michael Germeraad mgermeraad@bayareametro.gov if you are interested in gaining access to these files.
