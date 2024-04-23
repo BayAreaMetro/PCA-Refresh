@@ -11,7 +11,7 @@ The methodology documentation below describes the process for developing each --
 
 ## Project Resources
 - Full written project details are provided in the [PCA Refresh project Box Folder](https://mtcdrive.box.com/s/uq2w1im8sdo5j2vjp3aj5hln84o5p28l).
-  - Summary documentation of the PCA types is described on this GitHub page, but is most suscinctly summarized in this **[2-page document]**(https://mtcdrive.box.com/s/cyah1cn6l88ua1f6sytyi8gukhhedt40) which includes PCA type information on the description, objectives, datasets, primary benefits and co-benefits.
+  - Summary documentation of the PCA types is described on this GitHub page, but is most suscinctly summarized in this **[2-page document](https://mtcdrive.box.com/s/cyah1cn6l88ua1f6sytyi8gukhhedt40)** which includes PCA type information on the description, objectives, datasets, primary benefits and co-benefits.
 - The PCA Refresh geographic data is available in a few locations: 
   - Externally available datasets are available on MTC's Open Data Portal **ADD LINK WHEN AVAILABLE**
   - Internally available datasets are available on MTC's ArcGIS Online Organizational Site **ADD LINK WHEN AVAILABLE**. For external parties, contact Michael Germeraad mgermeraad@bayareametro.gov if you are interested in gaining access to these files.
