@@ -11,11 +11,12 @@ The methodology documentation below describes the process for developing each --
 
 ## Project Resources
 - Full written project details are provided in the [PCA Refresh project Box Folder](https://mtcdrive.box.com/s/uq2w1im8sdo5j2vjp3aj5hln84o5p28l).
+  - Summary documentation of the PCA types is described on this GitHub page, but is most suscinctly summarized in this [2-page document](https://mtcdrive.box.com/s/cyah1cn6l88ua1f6sytyi8gukhhedt40) which includes PCA type information on the description, objectives, datasets, primary benefits and co-benefits.
 - The PCA Refresh geographic data is available in a few locations: 
   - Externally available datasets are available on MTC's Open Data Portal **ADD LINK WHEN AVAILABLE**
   - Internally available datasets are available on MTC's ArcGIS Online Organizational Site **ADD LINK WHEN AVAILABLE**. For external parties, contact Michael Germeraad mgermeraad@bayareametro.gov if you are interested in gaining access to these files.
   - The datasets are also saved as a singular project file and are available **WHERE IS THE ArcGIS PROJECT FILE SAVED | ADD LINK WHEN AVAILABLE**
-- The Refresh Final Report and Onling Mapping Viewer are available on both the [MTC PCA webpage](https://mtc.ca.gov/planning/land-use/priority-conservation-areas-pcas) and [ABAG PCA webpage](https://abag.ca.gov/our-work/land-use/pca-priority-conservation-areas).
+- The Refresh Final Report and [Onling Mapping Viewer](https://experience.arcgis.com/experience/2175517734ea426eb3f5940a4e30bd6f/) are available on both the [MTC PCA webpage](https://mtc.ca.gov/planning/land-use/priority-conservation-areas-pcas) and [ABAG PCA webpage](https://abag.ca.gov/our-work/land-use/pca-priority-conservation-areas).
 ## Methodology - PCA Eligibility Maps
 At the core of the project was the development of 5 PCA eligibility maps. One map for each PCA type: Natural Lands, Working Lands, Urban Greening, Regional Recreation, and Climate Adaptation. To create these key final products many other interim, objective-level datasets were created, which were built on over 30+ raw datasets that had been individually processed. 
 
