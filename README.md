@@ -10,14 +10,23 @@ As described above the project had three phases, (i) identify strengths and weak
 The methodology documentation below describes the process for developing each -- with the Regionally-Identified PCA Maps leveraging the structure used for the Eligibilty Maps
 
 ## Project Resources
-- Full written project details are provided in the [PCA Refresh project Box Folder](https://mtcdrive.box.com/s/uq2w1im8sdo5j2vjp3aj5hln84o5p28l). Available to internal users.
+- The Refresh [Final Report](https://mtc.ca.gov/digital-library/5030093-priority-conservation-area-refresh-final-report) and [Onling Mapping Viewer](https://experience.arcgis.com/experience/2175517734ea426eb3f5940a4e30bd6f/) are available on both the [MTC PCA webpage](https://mtc.ca.gov/planning/land-use/priority-conservation-areas-pcas) and [ABAG PCA webpage](https://abag.ca.gov/our-work/land-use/pca-priority-conservation-areas).
+- For those interested in specific methodology documentation the following locations are helpful
   - For external users, a Summary documentation of the PCA types is described on this GitHub page, but is most suscinctly summarized in this **[2-page document](https://mtcdrive.box.com/s/cyah1cn6l88ua1f6sytyi8gukhhedt40)** which includes PCA type information on the description, objectives, datasets, primary benefits and co-benefits.
   - For external users particularly interested in the datasets this **[excel file](https://mtcdrive.box.com/s/ev7t7g4owots5hanoqc8u0lm0d460z4z)** provides additional detail on source data used to create the eligibility maps.
-- The PCA Refresh geographic data is available in a few locations: 
-  - Externally available datasets are available on MTC's Open Data Portal **ADD LINK WHEN AVAILABLE**
-  - Internally available datasets are available on MTC's ArcGIS Online Organizational Site **ADD LINK WHEN AVAILABLE**. For external parties, contact Michael Germeraad mgermeraad@bayareametro.gov if you are interested in gaining access to these files.
-  - The datasets are also saved as a singular project file and are available **WHERE IS THE ArcGIS PROJECT FILE SAVED | ADD LINK WHEN AVAILABLE**
-- The Refresh Final Report and [Onling Mapping Viewer](https://experience.arcgis.com/experience/2175517734ea426eb3f5940a4e30bd6f/) are available on both the [MTC PCA webpage](https://mtc.ca.gov/planning/land-use/priority-conservation-areas-pcas) and [ABAG PCA webpage](https://abag.ca.gov/our-work/land-use/pca-priority-conservation-areas).
+- The PCA Refresh geographic data is available via ArcGIS oneline. Below are direct links to specific mapping files:
+  - Natural Lands PCA Type Eligibility Layer https://mtc.maps.arcgis.com/home/item.html?id=8f4a98b1bb32402db22ba7379ea062a9
+  - Working Lands PCA Type Eligibility Layer https://mtc.maps.arcgis.com/home/item.html?id=a77ca0cdc90e4384944b627ef483699a
+  - Urban Greening PCA Type Eligibility Layer https://mtc.maps.arcgis.com/home/item.html?id=c78de9845c8845f4b3dfc9e810a3921e
+  - Recreation PCA Type Eligibility Layer https://mtc.maps.arcgis.com/home/item.html?id=b464a021a9674723ae1c5a19d87a5088
+  - Climate Adaptation PCA Type Eligibility Layer https://www.arcgis.com/home/item.html?id=a38c71d0ed214cd186b5434d0bd8b651
+  - Regionally-Identified Natural Lands PCA Layer https://www.arcgis.com/home/item.html?id=30018399eeec4e43bee194359dd41dc5
+  - Regionally-Identified Working Lands PCA Layer https://www.arcgis.com/home/item.html?id=be75c7de1b42408fa33732ec3e338e59
+  - Regionally-Identified Urban Greening PCA Layer https://www.arcgis.com/home/item.html?id=173209ff4b7a48108b6da1f9d42cc82f
+  - Regionally-Identified Recreation PCA Layer https://www.arcgis.com/home/item.html?id=37b3471aae9941a6bb8ad113f5dd9461
+  - Regionally-Identified Climate Adaptation PCA Layer https://www.arcgis.com/home/item.html?id=e13a4008e06f41739c3fff07235e652d
+- For MTCABAG staff, full written project details are provided in the [PCA Refresh project Box Folder](https://mtcdrive.box.com/s/uq2w1im8sdo5j2vjp3aj5hln84o5p28l). Contact Michael Germeraad, mgermeraad@bayareametro.gov for access.
+
 ## Methodology - PCA Eligibility Maps
 At the core of the project was the development of 5 PCA eligibility maps. One map for each PCA type: Natural Lands, Working Lands, Urban Greening, Regional Recreation, and Climate Adaptation. To create these key final products many other interim, objective-level datasets were created, which were built on over 30+ raw datasets that had been individually processed. 
 
@@ -93,7 +102,7 @@ _This process integrated the 15 objective maps into 5 PCA Eligibility Maps, the 
 
 In addition to using data to set eligibility for where PCAs were appropriate, other land cover and jurisdiction boundaries were used to clip eligibility.
 
-In the case of Natural Land and Working Land PCA types, their boundaries were clipped to outside City Limits/Urban Growth Boundaries/Urban Service Limit Lines as defined by this data layer **LINK TO OTHER GITHUB OR ARCGIS FILE**. Similarly, the inverse was used to keep only areas inside cities eligible for Urban Greening. Refer to Figure 3 for this nuance. In addition to using City Limits/Urban Growth Boundaries/Urban Service Limit Lines the Natural Land PCA type had additional nuance added. This was done recognizing that most shoreline jurisdictions have their city boundaries extend to the shoreline edge, or into the Bay water feature. The PCA Refresh Project Team developed a nuanced approach for Natural Land PCA Eligibility that allowed for areas to be identified inside city limits along the shoreline. Areas identified by data included in Objective NL2 that did not overlap with existing urban areas, nor MTC/ABAG growth geographies were included. The ***Reference Data Table*** has more detail on how this “masking” was done -- see the "Urban Non-Tidal Mask".
+In the case of Natural Land and Working Land PCA types, their boundaries were clipped to outside City Limits/Urban Growth Boundaries/Urban Service Limit Lines. Similarly, the inverse was used to keep only areas inside cities eligible for Urban Greening. Refer to Figure 3 for this breakdown by PCA type. In addition to using City Limits/Urban Growth Boundaries/Urban Service Limit Lines the Natural Land PCA type had additional nuance added. This was done recognizing that most shoreline jurisdictions have their city boundaries extend to the shoreline edge, or into the Bay water feature. The PCA Refresh Project Team developed a nuanced approach for Natural Land PCA Eligibility that allowed for areas to be identified inside city limits along the shoreline. Areas identified by data included in Objective NL2 that did not overlap with existing urban areas, nor MTC/ABAG growth geographies were included. Existing growth geographies as well as FMMP Urbanized layers ensured that these Natural Land areas within City Limits/Urban Growth Boundaries/Urban Service Limit Lines were not overlapping with areas where there could be conflict. Importantly, this adjustment for Natural Land enabled large areas of marshland to be eligible for the Natural Land designation. The ***Reference Data Table*** has more detail on how this “masking” was done -- see the rows titled "Urban Non-Tidal Mask".
 
 ## Methodology - Draft Regionally-Identified PCA Maps
 
