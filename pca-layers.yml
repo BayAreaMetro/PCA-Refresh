@@ -1,0 +1,31 @@
+pca_geo:
+  name: PCA Geographies
+  agol: https://www.arcgis.com/home/item.html?id=8f4a98b1bb32402db22ba7379ea062a9
+  url: https://services3.arcgis.com/i2dkYWmb4wHvYPda/arcgis/rest/services/PBA50_PCA_Polygons/FeatureServer/2
+
+pca_types:
+  natural_land:
+    flag: 1nl
+    name: Natural Land Eligibility Dataset
+    agol: https://www.arcgis.com/home/item.html?id=8f4a98b1bb32402db22ba7379ea062a9
+    url: https://services3.arcgis.com/i2dkYWmb4wHvYPda/arcgis/rest/services/Natural_Land_PCA_Eligiblity/FeatureServer/669
+  working_land:
+    flag: 1wl
+    name: Working Land Eligibility Dataset
+    agol: https://www.arcgis.com/home/item.html?id=a77ca0cdc90e4384944b627ef483699a
+    url: https://services3.arcgis.com/i2dkYWmb4wHvYPda/arcgis/rest/services/Working_Land_PCA_Eligibility/FeatureServer/225
+  urban_greening:
+    flag: 1ug
+    name: Urban Greening Eligibility Dataset
+    agol: https://www.arcgis.com/home/item.html?id=c78de9845c8845f4b3dfc9e810a3921e
+    url: https://services3.arcgis.com/i2dkYWmb4wHvYPda/arcgis/rest/services/Urban_Greening_PCA_Eligibility/FeatureServer/226
+  recreation:
+    flag: 1r
+    name: Recreation Eligibility Dataset
+    agol: https://www.arcgis.com/home/item.html?id=b464a021a9674723ae1c5a19d87a5088
+    url: https://services3.arcgis.com/i2dkYWmb4wHvYPda/arcgis/rest/services/Regional_Recreation_PCA_Eligibility/FeatureServer/227
+  climate_adaptation:
+    flag: 1ca
+    name: Climate Adaptation Eligibility Dataset
+    agol: https://www.arcgis.com/home/item.html?id=a38c71d0ed214cd186b5434d0bd8b651
+    url: https://services3.arcgis.com/i2dkYWmb4wHvYPda/arcgis/rest/services/Climate_Adaptation_PCA_Eligibility/FeatureServer/223
