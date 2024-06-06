@@ -29,3 +29,10 @@ pca_types:
     name: Climate Adaptation Eligibility Dataset
     agol: https://www.arcgis.com/home/item.html?id=a38c71d0ed214cd186b5434d0bd8b651
     url: https://services3.arcgis.com/i2dkYWmb4wHvYPda/arcgis/rest/services/Climate_Adaptation_PCA_Eligibility/FeatureServer/223
+
+ugb:
+  flag: ugb
+  name: EN4_Urban_Growth_Boundary
+  agol: https://mtc.maps.arcgis.com/home/item.html?id=9e16c1e49bcf40f5817d26a7684e1ad4
+  url: https://services3.arcgis.com/i2dkYWmb4wHvYPda/arcgis/rest/services/EN4_Urban_Growth_Boundary/FeatureServer/0
+  
