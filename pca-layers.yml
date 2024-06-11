@@ -7,8 +7,8 @@ pca_types:
   natural_land:
     flag: 1nl
     name: Natural Land Eligibility Dataset
-    agol: https://www.arcgis.com/home/item.html?id=8f4a98b1bb32402db22ba7379ea062a9
-    url: https://services3.arcgis.com/i2dkYWmb4wHvYPda/arcgis/rest/services/Natural_Land_PCA_Eligiblity/FeatureServer/669
+    agol: https://mtc.maps.arcgis.com/home/item.html?id=82aa8ee26fd145b98e5334210ef03be9
+    url: https://services3.arcgis.com/i2dkYWmb4wHvYPda/arcgis/rest/services/Natural_Land_PCA_Eligibility_v0a/FeatureServer/0
   working_land:
     flag: 1wl
     name: Working Land Eligibility Dataset
