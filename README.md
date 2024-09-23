@@ -20,11 +20,11 @@ The methodology documentation below describes the process for developing each --
   - [Urban Greening PCA Type Eligibility Layer](https://mtc.maps.arcgis.com/home/item.html?id=c78de9845c8845f4b3dfc9e810a3921e)
   - [Recreation PCA Type Eligibility Layer](https://mtc.maps.arcgis.com/home/item.html?id=b464a021a9674723ae1c5a19d87a5088)
   - [Climate Adaptation PCA Type Eligibility Layer](https://mtc.maps.arcgis.com/home/item.html?id=fa3b4e5b86db42358c51266f6086b3e8)
-  - [Regionally-Identified Natural Lands PCA Layer]
-  - [Regionally-Identified Working Lands PCA Layer]
-  - [Regionally-Identified Urban Greening PCA Layer]
-  - [Regionally-Identified Recreation PCA Layer]
-  - [Regionally-Identified Climate Adaptation PCA Layer]
+  - [Regionally-Identified Natural Lands PCA Layer](https://mtc.maps.arcgis.com/home/item.html?id=30018399eeec4e43bee194359dd41dc5)
+  - [Regionally-Identified Working Lands PCA Layer](https://mtc.maps.arcgis.com/home/item.html?id=be75c7de1b42408fa33732ec3e338e59)
+  - [Regionally-Identified Urban Greening PCA Layer](https://mtc.maps.arcgis.com/home/item.html?id=173209ff4b7a48108b6da1f9d42cc82f)
+  - [Regionally-Identified Recreation PCA Layer](https://mtc.maps.arcgis.com/home/item.html?id=37b3471aae9941a6bb8ad113f5dd9461)
+  - [Regionally-Identified Climate Adaptation PCA Layer](https://mtc.maps.arcgis.com/home/item.html?id=e13a4008e06f41739c3fff07235e652d)
 - For MTCABAG staff, full written project details are provided in the [PCA Refresh project Box Folder](https://mtcdrive.box.com/s/uq2w1im8sdo5j2vjp3aj5hln84o5p28l). Contact Michael Germeraad, mgermeraad@bayareametro.gov for access.
 
 ## Methodology - PCA Eligibility Maps
