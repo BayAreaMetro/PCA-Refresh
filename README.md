@@ -19,7 +19,7 @@ The methodology documentation below describes the process for developing each --
   - [Working Lands PCA Type Eligibility Layer](https://mtc.maps.arcgis.com/home/item.html?id=a77ca0cdc90e4384944b627ef483699a)
   - [Urban Greening PCA Type Eligibility Layer](https://mtc.maps.arcgis.com/home/item.html?id=c78de9845c8845f4b3dfc9e810a3921e)
   - [Recreation PCA Type Eligibility Layer](https://mtc.maps.arcgis.com/home/item.html?id=b464a021a9674723ae1c5a19d87a5088)
-  - [Climate Adaptation PCA Type Eligibility Layer]([https://www.arcgis.com/home/item.html?id=a38c71d0ed214cd186b5434d0bd8b651](https://mtc.maps.arcgis.com/home/item.html?id=fa3b4e5b86db42358c51266f6086b3e8))
+  - [Climate Adaptation PCA Type Eligibility Layer](https://mtc.maps.arcgis.com/home/item.html?id=fa3b4e5b86db42358c51266f6086b3e8)
   - [Regionally-Identified Natural Lands PCA Layer](https://www.arcgis.com/home/item.html?id=30018399eeec4e43bee194359dd41dc5)
   - [Regionally-Identified Working Lands PCA Layer](https://www.arcgis.com/home/item.html?id=be75c7de1b42408fa33732ec3e338e59)
   - [Regionally-Identified Urban Greening PCA Layer](https://www.arcgis.com/home/item.html?id=173209ff4b7a48108b6da1f9d42cc82f)
