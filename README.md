@@ -15,13 +15,13 @@ The methodology documentation below describes the process for developing each --
   - For external users, a Summary documentation of the PCA types is described on this GitHub page, but is most suscinctly summarized in this **[2-page document](https://mtcdrive.box.com/s/cyah1cn6l88ua1f6sytyi8gukhhedt40)** which includes PCA type information on the description, objectives, datasets, primary benefits and co-benefits.
   - For external users particularly interested in the datasets this **[excel file](https://mtcdrive.box.com/s/ev7t7g4owots5hanoqc8u0lm0d460z4z)** provides additional detail on source data used to create the eligibility maps.
 - The PCA Refresh geographic data is available via [MTC's ArcGIS online account](https://mtc.maps.arcgis.com/home/index.html). Below are direct links to specific mapping files:
-  - [Natural Lands PCA Type Eligibility Layer](https://mtc.maps.arcgis.com/home/item.html?id=82aa8ee26fd145b98e5334210ef03be9)
-  - [Working Lands PCA Type Eligibility Layer](https://mtc.maps.arcgis.com/home/item.html?id=a77ca0cdc90e4384944b627ef483699a)
+  - [Natural Land PCA Type Eligibility Layer](https://mtc.maps.arcgis.com/home/item.html?id=82aa8ee26fd145b98e5334210ef03be9)
+  - [Working Land PCA Type Eligibility Layer](https://mtc.maps.arcgis.com/home/item.html?id=a77ca0cdc90e4384944b627ef483699a)
   - [Urban Greening PCA Type Eligibility Layer](https://mtc.maps.arcgis.com/home/item.html?id=c78de9845c8845f4b3dfc9e810a3921e)
   - [Recreation PCA Type Eligibility Layer](https://mtc.maps.arcgis.com/home/item.html?id=b464a021a9674723ae1c5a19d87a5088)
   - [Climate Adaptation PCA Type Eligibility Layer](https://mtc.maps.arcgis.com/home/item.html?id=fa3b4e5b86db42358c51266f6086b3e8)
-  - [Regionally-Identified Natural Lands PCA Layer](https://mtc.maps.arcgis.com/home/item.html?id=30018399eeec4e43bee194359dd41dc5)
-  - [Regionally-Identified Working Lands PCA Layer](https://mtc.maps.arcgis.com/home/item.html?id=be75c7de1b42408fa33732ec3e338e59)
+  - [Regionally-Identified Natural Land PCA Layer](https://mtc.maps.arcgis.com/home/item.html?id=30018399eeec4e43bee194359dd41dc5)
+  - [Regionally-Identified Working Land PCA Layer](https://mtc.maps.arcgis.com/home/item.html?id=be75c7de1b42408fa33732ec3e338e59)
   - [Regionally-Identified Urban Greening PCA Layer](https://mtc.maps.arcgis.com/home/item.html?id=173209ff4b7a48108b6da1f9d42cc82f)
   - [Regionally-Identified Recreation PCA Layer](https://mtc.maps.arcgis.com/home/item.html?id=37b3471aae9941a6bb8ad113f5dd9461)
   - [Regionally-Identified Climate Adaptation PCA Layer](https://mtc.maps.arcgis.com/home/item.html?id=e13a4008e06f41739c3fff07235e652d)
