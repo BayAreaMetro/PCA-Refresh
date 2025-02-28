@@ -1,0 +1,13 @@
+name: pca-env
+channels:
+  - conda-forge
+dependencies:
+  # more important
+  - python>=3.11
+  - geopandas>=0.14
+  - shapely
+  - pyyaml
+  - ipykernel
+  - pytest
+  - openpyxl
+  - xlrd

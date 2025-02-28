@@ -1,25 +1,12 @@
 import os
+import time
 import numpy as np
-import sys
-from dotenv import load_dotenv
+import pandas as pd
+import geopandas as gpd
+from shapely.validation import explain_validity, make_valid
 import yaml
-import getpass
 
-user = getpass.getuser()
 
-load_dotenv()
-DVUTILS_LOCAL_CLONE_PATH = os.environ.get("DVUTILS_LOCAL_CLONE_PATH")
-sys.path.insert(0, DVUTILS_LOCAL_CLONE_PATH)
-
-from utils_io import *
-
-## Create ArcGIS Client
-client = create_arcgis_client()
-
-## Define Box System Root Directory
-box_path = os.path.join("/Users", user, "Library", "CloudStorage", "Box-Box")
-
-## Set the PCA Layers configuration file: PCA Geographies and PCA Types
 yaml_file = 'pca-layers.yml'
 
 eval_dir = '_data/evaluation_assignments'
@@ -53,43 +40,9 @@ def _set_feather_dir(data_dir=None):
     return data_dir
 
 
-def _load_agol_if_not_exists(data_dir, filename, feather_file, url, client):
-    """
-    Check if file exists in directory and extract if not.
-    """
-    if not os.path.exists(feather_file):
-        try:
-            # Extract the file
-            gdf = pull_geotable_agol(url, client=client)
-            print(f"File '{filename}' extracted from AGOL")
-            return gdf
-        except Exception as e:
-            print(f"ERROR extracting '{filename}' from AGOL\n")
-            return None
-    else:
-        print(f"File '{filename}' already exists in '{data_dir}'.\n")
-        return None
-
-
-def agol_to_feather(filename, url, data_dir=None, client=client):
-    """
-    Extract AGOL dataset to local Feather file
-    """
-    # Set Data Directory
-    data_dir = _set_feather_dir(data_dir)
-    feather_file = os.path.join(data_dir, f"{filename}.feather")
-    # Load AGOL dataset if file does not exist as Feather file
-    gdf = _load_agol_if_not_exists(data_dir, filename, feather_file, url, client)
-    if gdf is not None:
-        # Save to Feather
-        gdf.to_feather(feather_file)
-        # Return the file path
-        print(f"File saved to {feather_file}\n")
-
-
 def open_feather(filename, data_dir=None):
     """
-    Extract AGOL dataset to local Feather file
+    Open Feather file from Data Directory location
     """
     # Set Data Directory
     data_dir = _set_feather_dir(data_dir)
@@ -98,64 +51,6 @@ def open_feather(filename, data_dir=None):
     print(f"Opening file from {feather_file}\n")
 
     return gpd.read_feather(feather_file)
-
-
-def shapefiles_list(dirs, box_path=box_path):
-    """
-    Create a list of shapefiles from a list of directories
-    """
-    shapefiles = []
-    for dir in dirs:
-        dir_path = os.path.join(box_path, dir)
-        shapefiles.extend([(dir_path, file) for file in os.listdir(dir_path) if file.endswith('.shp')])
-    
-    return shapefiles
-
-
-def read_shapefiles(shapefiles):
-    """
-    Read a list of shapefiles into a single GeoDataFrame
-    """
-    # Create an empty list to store GeoDataFrames
-    gdfs = []
-    # Iterate over each shapefile and read it into a GeoDataFrame
-    for shapefile in shapefiles:
-        dir, file = shapefile
-        # Construct the full path to the shapefile
-        shapefile_path = os.path.join(dir, file)
-        try:
-            # Read the shapefile into a GeoDataFrame
-            gdf = gpd.read_file(shapefile_path)
-            # Tag the GeoDataFrame with the source shapefile
-            gdf['source'] = file
-            # Append the GeoDataFrame to the list
-            gdfs.append(gdf.to_crs(26910))
-        except Exception as e:
-            print(f"Error reading shapefile {shapefile}: {str(e)}")
-    
-    # Merge all GeoDataFrames into a single GeoDataFrame
-    gdf = gpd.GeoDataFrame(pd.concat(gdfs, ignore_index=True), crs=26910)
-    # Apply fixes
-    gdf = _shp_fixes(gdf)
-
-    
-    return gdf
-
-
-def _shp_fixes(gdf):
-    """
-    Apply fixes to the shapefiles
-    """
-    # Fix FIPCO column data types for Feather file compatibility
-    gdf['fipco'] = gdf['fipco'].astype(str).str.zfill(5)
-    
-    # Dissolve to single record
-    gdf = gdf.fillna(0).dissolve(by=['source', 'joinkey']).reset_index(drop=False)
-
-    # Drop extra columns
-    # gdf = gdf.loc[:, :'source']
-
-    return gdf
 
 
 def replace_nulls(df, columns, replace_dict=None):
@@ -369,3 +264,161 @@ def overlay_surface_percentage_matrix(gdf, id_column='gdf_id', how='intersection
                 matrix.at[id_i, id_j] = percentage_overlay
     
     return matrix
+
+
+def repair_geometry(gdf):
+    """Given a geopandas GeoDataFrame, tests the validity of and repairs GeoDataFrame geometries.
+
+    If no invalid geometries are found, returns the original GeoDataFrame. The function leverages
+    the shapely methods is_valid() to check validity and the explain_validity() and make_valid()
+    functions. For more information about how these methods and functions work, please refer to the
+    shapely documentation: https://shapely.readthedocs.io/en/stable/manual.html#diagnostics
+
+    Author: Joshua Croff
+
+    Args:
+        gdf: A Geopandas GeoDataFrame object.
+
+    Returns:
+        GeoDataFrame: A Geopandas GeoDataFrame object.
+    """
+
+    if gdf.geometry.is_valid.all():
+        print("Geodataframe contains valid geometry. No repair necessary.")
+        return gdf
+    else:
+        repaired_gdf = gdf.copy()
+        print("Geodataframe contains invalid geometry, starting geometry repair process...\n")
+        print(repaired_gdf.geometry.apply(explain_validity).value_counts())
+        invalid_before_ct = repaired_gdf[~repaired_gdf.geometry.is_valid].shape[0]
+
+        # Make valid
+        repaired_gdf["geometry"] = repaired_gdf.geometry.apply(make_valid)
+        invalid_after_ct = repaired_gdf[~repaired_gdf.geometry.is_valid].shape[0]
+
+        if repaired_gdf.geometry.is_valid.all():
+            msg = f"\nGeometry repair complete.\nInvalid geometries before repair: {invalid_before_ct}\nInvalid Geometries after repair: {invalid_after_ct}"
+            print(msg)
+        else:
+            msg = "\nGeodataframe still contains invalid geometries. Consider manual fix or revisiting geoprocess for issues that may create invalid geometries."
+            print(msg)
+        return repaired_gdf
+
+
+############### MTCPY library functions ###############
+
+
+# Default CRS for analysis
+ANALYSIS_CRS = "EPSG:26910"
+
+
+def geo_assign_fields(
+    id_df,
+    id_field,
+    overlay_df,
+    overlay_fields,
+    return_intersection_area=False,
+    id_within_pct=None,
+):
+    """Given an id_df and an overlay_df, assigns the overlay fields.
+
+    Methodology:
+    Assigns based on the area with the largest intersection with each id_field (where there are
+    duplicate assignments).
+
+    Notes:
+        - This is primarily used for generating correspondences, such as new to old parcel id
+        - If any overlay_fields also occur in the id_df, append a _y suffix to the overlay field
+
+    Args:
+        id_df (geopandas GeoDataFrame): The ID GeoDataFrame
+        id_field (str): The name of the ID column in the ID GeoDataFrame
+        overlay_df (geopandas GeoDataFrame): The overlay GeoDataFrame
+        overlay_fields (list): A list of overlay fields to assign to the ID GeoDataFrame
+        return_intersection_area (bool, optional): Flag for whether to return the intersection area
+            of the overlay. Defaults to False.
+        id_within_pct (float, optional): Value between 0 and 1. If provided, will only assign overlay df values if the id_df
+            is within this percentage of the overlay df. Defaults to None.
+    Returns:
+        geopandas GeoDataFrame: The ID GeoDataFrame with the overlay fields assigned by largest
+            intersection area
+    """
+    a = time.time()
+    if id_df.crs != ANALYSIS_CRS or overlay_df.crs != ANALYSIS_CRS:
+        print(f"base geo crs: {id_df.crs}")
+        print(f"overlay geo crs: {overlay_df.crs}")
+        print("Both GeoDataFrames must be in EPSG:26910. Reprojecting:")
+        id_df = project_to_analysis_crs(id_df)
+        overlay_df = project_to_analysis_crs(overlay_df)
+
+    join_df = gpd.overlay(id_df, overlay_df, how="intersection")
+    join_df["intersection_sq_m"] = join_df.geometry.area
+    join_df["idx"] = join_df.index
+
+    max_idxs = (
+        join_df.groupby(id_field, as_index=False)
+        .agg({"intersection_sq_m": "idxmax"})
+        .rename(columns={"intersection_sq_m": "idx"})
+    )
+    join_df = join_df.merge(max_idxs)
+
+    final_fields = [id_field] + overlay_fields
+
+    # calculate intersection area and share of id_df in intersection
+    id_df["base_sq_m"] = id_df.geometry.area
+    final_assignment = id_df[[id_field, "base_sq_m"]].merge(
+        join_df[final_fields + ["intersection_sq_m"]], how="left"
+    )
+    final_assignment["area_share"] = (
+        final_assignment["intersection_sq_m"] / final_assignment["base_sq_m"]
+    )
+
+    # set the assignment to None if no more than id_within_pct of the id_df is within the overlay_df
+    if id_within_pct is not None:
+        final_assignment.loc[final_assignment["area_share"] < id_within_pct, overlay_fields] = None
+
+    b = time.time()
+    print(f"took {print_runtime(b-a)}")
+    if return_intersection_area:
+        return final_assignment[final_fields + ["base_sq_m", "intersection_sq_m", "area_share"]]
+    else:
+        return final_assignment
+
+
+def print_runtime(run_seconds):
+    """Formats runtime for more readable logging.
+
+    Args:
+        run_seconds (float): Runtime (in seconds).
+
+    Returns:
+        str: Readable runtime string for logging.
+    """
+    if run_seconds > 60:
+        mins = run_seconds / 60.0
+        if mins < 60:
+            return "{} minutes".format(round(mins, 4))
+        else:
+            return "{} hours".format(round(mins / 60.0, 4))
+    else:
+        return "{} seconds".format(round(run_seconds, 4))
+    
+
+def project_to_analysis_crs(geo_df):
+    """Checks for whether a GeoDataFrame is in the analysis CRS (EPSG:26910) and reprojects if not.
+
+    Args:
+        geo_df (geopandas GeoDataFrame): A geopandas GeoDataFrame needs to be reprojected for
+            spatial analysis
+
+    Returns:
+        geopandas GeoDataFrame: A geopandas GeoDataFrame in the analysis CRS (EPSG:26910)
+    """
+    if geo_df.crs != ANALYSIS_CRS:
+        print("GeoDataFrame must be in EPSG:26910. Reprojecting:")
+        try:
+            geo_df = geo_df.to_crs(ANALYSIS_CRS)
+        except:
+            print("Error reprojecting, correct geometries and re-run.")
+            return
+    return geo_df
