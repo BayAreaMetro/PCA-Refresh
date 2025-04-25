@@ -4,7 +4,9 @@ import numpy as np
 import pandas as pd
 import geopandas as gpd
 from shapely.validation import explain_validity, make_valid
+from shapely.geometry import Polygon
 import yaml
+from datetime import datetime
 
 
 yaml_file = 'pca-layers.yml'
@@ -48,7 +50,7 @@ def open_feather(filename, data_dir=None):
     data_dir = _set_feather_dir(data_dir)
     feather_file = os.path.join(data_dir, f"{filename}.feather")
     # Load Feather file dataset 
-    print(f"Opening file from {feather_file}\n")
+    print(f"Opening file from {feather_file}")
 
     return gpd.read_feather(feather_file)
 
@@ -70,12 +72,12 @@ def coalesce_columns(df, col_name, col_inputs):
     return df
 
 
-def process_data_load(dict):
+def process_data_load(dict, data_key='data_load'):
     """
-    Process the data_load into tte data dictionary item,
+    Process the data_load into the data dictionary item,
     and create a gdf_id column with unique identifiers
     """
-    dict['data'] = dict['data_load'].copy()
+    dict['data'] = dict[data_key].copy()
     dict['data'].reset_index(drop=True, inplace=True)
     dict['data']['gdf_id'] = 1 + dict['data'].index
 
@@ -109,13 +111,13 @@ def simplify_geoms(gdf):
     """
     print("Checking geometry validity and repairing geometries prior to dissolve/explode steps") ## JC: Added print statement
     ## Check/Repair Geometries
-    gdf = repair_geometry(gdf.query("geometry.notnull()"))
-    print(f"GDF Geometry Types: {gdf.geom_type.unique()}")
+    gdf = repair_geometry(gdf.query("geometry.notnull()")) #
+    print(f"GDF Geometry Types: {gdf.geom_type.unique()}") #
     ## Convert Multipart features to Single part
     gdf = gdf.dissolve(by=None).reset_index(drop=True)
-    gdf = gdf.explode(index_parts=False).reset_index(drop=True)
+    # gdf = gdf.explode(index_parts=False).reset_index(drop=True) #
     ## Repair Geometries
-    gdf = repair_geometry(gdf.query("geometry.notnull()"))
+    # gdf = repair_geometry(gdf.query("geometry.notnull()")) #
     print(f"GDF Geometry Types: {gdf.geom_type.unique()}")
 
     return gdf
@@ -163,6 +165,22 @@ def create_footprints_for_dict(input_dict, flag_name, export=True, data_dir=None
                 print("Creation of Footprint failed!\n")
 
 
+def load_footprints_for_dict(input_dict):
+    """
+    Iterate through Dictionary object and load area footprints
+    """
+    for k, v in input_dict.items():
+        try:
+            print(f"Loading data for {k}")
+            ## Load PCA type from Feather file
+            footprint_filename = f"{v['filename']}_footprint"
+            v["footprint"] = open_feather(footprint_filename)
+            v['footprint'].plot()       
+            print(f"Footprint loaded successfully from {footprint_filename}\n")
+        except Exception as e:
+            print(f"Failed to load data for {k}!\n")
+
+
 def assign_footprint(
                 gdf_base,
                 gdf_over,
@@ -170,16 +188,16 @@ def assign_footprint(
                 gdf_base_id="gdf_id",
                 return_share=True
                 ):
-    """Given an Input Geodataframe, runs Spatial Overlay
-    to Parcels and returns Parcel Assignment crosswalk
+    """Given an Overlay Geodataframe, runs Spatial Overlay
+    to a Base Geodataframe and returns Parcel Assignment crosswalk
     """
     ## Check for gdf_id or create
     if (gdf_base_id == 'gdf_id') and (not gdf_base_id in gdf_base.columns):
         print('Creating gdf_id')
         gdf_base.reset_index(drop=True, inplace=True)
         gdf_base["gdf_id"] = 1 + gdf_base.index
-    ## Create Base GeoDataframe to Input GeoDataframe correspondence
-    print('Creating Base GeoDataframe to Input GeoDataframe correspondence')
+    ## Create Base GeoDataframe to Overlay GeoDataframe correspondence
+    print('Creating Base GeoDataframe to Overlay GeoDataframe correspondence')
     gdf_over_corresp = geo_assign_fields(
         id_df=gdf_base[[gdf_base_id, 'geometry']],
         id_field=gdf_base_id,
@@ -187,14 +205,14 @@ def assign_footprint(
         overlay_fields=[flag_name],
         return_intersection_area=return_share,
     )
-    ## Merge p10 Parcels GeoDataframe to Input GeoDataframe using correspondence,
+    ## Merge Base GeoDataframe to Overlay GeoDataframe using correspondence,
     ## return Dataframe
     gdf_base_fields = [i for i in gdf_base.columns if i != "geometry"]
     if return_share:
+        print('Calculating area_sq_m')
         if (not 'area_sq_m' in gdf_base.columns):
-            print('Creating area_sq_m')
-            gdf_base['area_sq_m'] = gdf_base.geometry.area
             gdf_base_fields.append("area_sq_m")
+        gdf_base['area_sq_m'] = gdf_base.geometry.area
     base_over = pd.merge(gdf_base[gdf_base_fields], gdf_over_corresp, on=gdf_base_id, how="left")
     if return_share:
         intersect_area_col = f"{flag_name}_intersect_sq_m"
@@ -304,6 +322,24 @@ def repair_geometry(gdf):
             print(msg)
         return repaired_gdf
 
+
+def spot_check_square(pca_types, x_coords, y_coords):
+    """Spot check a square area of the PCA types to see if they are clipped correctly.
+    Args:
+        pca_types (dict): Dictionary of PCA types.
+        x_coords (list): List of x coordinates for the square.
+        y_coords (list): List of y coordinates for the square.
+    """
+    # Create the polygon
+    polygon = Polygon(zip(x_coords, y_coords))
+    # Create a GeoDataFrame with the polygon
+    clip_boundary = gpd.GeoDataFrame(geometry=[polygon], crs='EPSG:26910')
+    for i in pca_types.keys():
+        print(f"Checking {i}")
+        layer_source = pca_types[i]['footprint']
+        clipped_layer = gpd.clip(layer_source, clip_boundary)
+        print(f"Clipped layer has {clipped_layer.shape[0]} rows")
+        clipped_layer.plot()
 
 ############### MTCPY library functions ###############
 
