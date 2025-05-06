@@ -10,6 +10,12 @@ pca_ammend:
   agol: 
   url: 
   filename: pca_shp_integration
+pca_nominations:
+  use: pca_geographies
+  name: PCA Boundary Work (Nominations)
+  agol: 
+  url: 
+  filename: pca_nominations
 natural_land:
   use: pca_type
   flag: 1nl
